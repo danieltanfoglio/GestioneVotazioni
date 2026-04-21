@@ -1,0 +1,15 @@
+==========================================================
+|			VERBALE SCRUTINIO REFERENDUM		   |
+==========================================================
+Totale schede scrutinate: 21
+Affluenza: 21/1000 ovvero 2.1%
+----------------------------------------------------------
+Numero totale di voti SI: 8| 38.0952%
+Numero totale di voti NO: 7| 33.3333%
+Numero totale di voti BIANCA: 1| 4.7619%
+Numero totale di voti NULLI: 5| 23.8095%
+----------------------------------------------------------
+RISULTATO FINALE: HA VINTO IL SI
+CON 8 VOTI: 53.3333%
+IL NO HA AVUTO 7 VOTI: 46.6667%
+==========================================================
