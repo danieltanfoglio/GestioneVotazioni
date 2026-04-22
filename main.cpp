@@ -27,6 +27,8 @@ void shuffle(int n,string nomi[],string cognomi[]);
 const int ELETTORI=1000;
 int main(int argc, char** argv) {
 	srand((unsigned) time(NULL));
+	system("");
+	setColor(Reset);
 	//lista di nomi utilizzati nella simulazione
 	string nomi[100]={
 		"Alessandro", "Giulia", "Francesco", "Sofia", "Lorenzo", "Aurora", "Mattia", "Alice", "Leonardo", "Emma",
@@ -52,6 +54,7 @@ int main(int argc, char** argv) {
 	size_t ID;		//size_t= numero massimo possibile in memoria
 	string voto;
 	bool continua;
+	bool continuaPrincipale=true;
 	int contSi=0,contNo=0,contBianca=0,contNulla=0,Affluenza=0;
 	int totaleVoti;
 	bool votoValido;
@@ -60,7 +63,6 @@ int main(int argc, char** argv) {
 	//lettura iniziale del file delle votazioni
 	do {
 		
-	continua=true;
 	landing();
 	//leggere la scelta
 	setColor(Cyan);
@@ -69,12 +71,13 @@ int main(int argc, char** argv) {
 	//stampaVoti(contSi,contNo,contNulla,contBianca,Affluenza);
 	if(scelta==1){
 		lettura(contSi,contNo,contNulla,contBianca,Affluenza);	//inizialmente legge dal file preinizializzato i voti
+		int sceltaSottoMenu;
 		system("cls");
 		do {
 			//menu
-			scelta=menu();
+			sceltaSottoMenu=menu();
 			//inizialmente l'utente inserisce il nome del votante, poi viene convertito in lowercase e codificato tramite std::hash
-			switch(scelta){
+			switch(sceltaSottoMenu){
 				case 0:
 				//torna al menu principale
 				break;
@@ -174,7 +177,7 @@ int main(int argc, char** argv) {
 				break;
 			}//fine switch
 		}
-		while(scelta!=0);	
+		while(sceltaSottoMenu!=0);	
 	}
 	else if (scelta==2){
 		//mostrare l'andamento fino adesso
@@ -262,7 +265,7 @@ int main(int argc, char** argv) {
 			setColor(Verde);
 			cout<<"GRAZIE PER AVERE USATO GESTIONE VOTAZIONI"<<endl;
 			setColor(Reset);
-			continua=false;
+			continuaPrincipale=false;
 //			system("pause");
 			return 0;
 		}
@@ -280,7 +283,7 @@ int main(int argc, char** argv) {
 	}
 	system("cls");
 	}
-	while(continua);
+	while(continuaPrincipale);
 	return 0;
 }
 void landing(){
